@@ -44,9 +44,10 @@ while True:
         found = False
         for account in acc:
             if acco_num == account.account_number:
+                found = True
                 if account.current_balance >= amount:
                     account.current_balance -= amount
-                    found = True
+                    account.display()
                 else:
                     print("Insufficient Balance")
             
@@ -72,7 +73,6 @@ while True:
             richest.display() 
         else:
             print("No Account Found")
-
 
     if user == "Exit":
         break
